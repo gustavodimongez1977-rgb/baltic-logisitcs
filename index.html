@@ -3,13 +3,235 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baltic-Logistics — Личный кабинет</title>
+  <title>Baltic-Logistics — Международные контейнерные перевозки</title>
   <style>
-    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #f4f6f9; }
-    iframe { width: 100%; height: 100%; border: none; display: block; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #1e293b;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #38bdf8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    @keyframes logo-pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+      100% { transform: scale(1); }
+    }
+    .logo-img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      animation: logo-pulse 3s infinite ease-in-out;
+      border-radius: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+    .btn {
+      background: #0284c7;
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #0369a1;
+    }
+    .btn-lg {
+      padding: 14px 28px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: white;
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .hero-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 38px;
+      margin: 0 0 20px;
+      line-height: 1.25;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #cbd5e1;
+      margin: 0 0 35px;
+    }
+    main {
+      max-width: 1200px;
+      margin: -30px auto 50px;
+      padding: 0 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #1e293b;
+      font-size: 20px;
+    }
+    .card p {
+      color: #475569;
+      margin-bottom: 0;
+    }
+    .tracking-banner {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border-left: 5px solid #0284c7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .tracking-banner h2 {
+      margin: 0 0 10px;
+      color: #1e293b;
+    }
+    .tracking-banner p {
+      margin: 0;
+      color: #475569;
+      max-width: 650px;
+    }
+    .contacts-box {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .contacts-box h2 {
+      margin-top: 0;
+      color: #1e293b;
+    }
+    footer {
+      background: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      header { padding: 15px 20px; }
+      .hero { padding: 50px 20px; }
+      .hero h1 { font-size: 28px; }
+    }
   </style>
 </head>
 <body>
-  <iframe src="https://google.com"></iframe>
+
+  <header>
+    <a href="/" class="logo">
+      <img src="logo_bl.png" alt="Baltic-Logistics" class="logo-img">
+      <span>Baltic-Logistics</span>
+    </a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#tracking">Отслеживание</a>
+      <a href="#contacts">Контакты</a>
+      <a href="https://google.com" class="btn">Вход в личный кабинет</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Международная контейнерная логистика и экспедирование</h1>
+      <p>Надежная доставка грузов морем, железной дорогой и автотранспортом с круглосуточным онлайн-контролем каждого этапа перевозки.</p>
+      <a href="https://google.com" class="btn btn-lg">Перейти в личный кабинет →</a>
+    </div>
+  </section>
+
+  <main>
+    <div id="services" class="grid-3">
+      <div class="card">
+        <h3>🚢 Морские перевозки</h3>
+        <p>Организация контейнерных отправок (FCL/LCL) через ключевые порты с полным внутрипортовым экспедированием.</p>
+      </div>
+      <div class="card">
+        <h3>🚆 Мультимодальные маршруты</h3>
+        <p>Оптимальные схемы доставки «от двери до двери» с использованием железнодорожного и автомобильного транспорта.</p>
+      </div>
+      <div class="card">
+        <h3>📋 Таможенное сопровождение</h3>
+        <p>Консультации по ВЭД, подготовка товаросопроводительной документации и контроль на всех этапах прохождения груза.</p>
+      </div>
+    </div>
+
+    <div id="tracking" class="tracking-banner">
+      <div>
+        <h2>Онлайн-отслеживание ваших грузов 24/7</h2>
+        <p>Проверяйте актуальные даты погрузки, выхода судна (ETD), прибытия в порт (ETA), статус контейнеров и историю завершенных рейсов в личном кабинете или через нашего Telegram-бота.</p>
+      </div>
+      <a href="https://google.com" class="btn">Открыть кабинет</a>
+    </div>
+
+    <div id="contacts" class="contacts-box">
+      <h2>Контакты</h2>
+      <p>Свяжитесь с нами для расчета ставки на перевозку или получения логина и пароля от личного кабинета:</p>
+      <p><strong>Сайт:</strong> ://baltic-logistics.com</p>
+      <p><strong>Telegram-бот для клиентов:</strong> доступен по вашему рабочему username</p>
+      <p><strong>Время работы:</strong> Пн–Пт, 09:00 – 18:00</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Baltic-Logistics. Все права защищены.
+  </footer>
+
 </body>
 </html>
